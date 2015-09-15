@@ -9,7 +9,9 @@
 import XCTest
 
 class UITestingDemoUITests: XCTestCase {
-        
+    
+    let app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         
@@ -28,9 +30,68 @@ class UITestingDemoUITests: XCTestCase {
         super.tearDown()
     }
     
+    func testRunIntro() {
+        
+        let userTextField = app.textFields["User Name"]
+        userTextField.tap()
+        app.textFields["User Name"].typeText("Hello")
+        
+        let passwordSecureTextField = XCUIApplication().secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("password")
+        
+        app.buttons["Launch App"].tap()
+        
+    }
+    
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let masterNavigationBar = app.navigationBars["Master"]
+        let addButton = masterNavigationBar.buttons["Add"]
+        addButton.tap()
+        addButton.tap()
+        addButton.tap()
+        masterNavigationBar.buttons["Edit"].tap()
+        
+        let tablesQuery = app.tables
+        let table = tablesQuery.element
+        let cell = table.cells.elementBoundByIndex(2)
+        XCTAssertTrue(cell.exists)
+        let cellButton = cell.buttons.elementBoundByIndex(0)
+        cellButton.tap()
+        tablesQuery.buttons["Delete"].tap()
+        let count = table.cells.count
+        XCTAssertTrue(count == 2)
+        
+    }
+    
+    func testQueryScene() {
+        
+        let labelByTextQuery = app.staticTexts["Label"]
+        XCTAssertTrue(labelByTextQuery.exists)
+        print(labelByTextQuery.value)
+        
+        //let labelByAccessibilityIdentifier = app.staticTexts["accessibilityIdentifier"]
+        //let labelByAccessibilityLabel = app.staticTexts["accessibilityLabel"]
+        
+        //print("-->")
+        //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
+        //XCTAssertTrue(labelByAccessibilityLabel.exists)
+        
+        let mainButton = app.buttons["Button"]
+        mainButton.tap()
+        
+        XCTAssertEqual(labelByTextQuery.exists,false)
+        //print("-->")
+        //print(labelByTextQuery.value)
+        //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
+        //XCTAssertTrue(labelByAccessibilityLabel.exists)
+        
+        let newLabelText = app.staticTexts["Tapped"]
+        XCTAssertTrue(newLabelText.exists)
+        
     }
     
 }
