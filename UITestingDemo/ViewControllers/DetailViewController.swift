@@ -3,7 +3,7 @@
 //  test-bots2
 //
 //  Created by Nick McConnell on 9/10/15.
-//  Copyright © 2015 Nick McConnell. All rights reserved.
+//  Copyright © 2015 Nick McConnell. All rights reserved
 //
 
 import UIKit
