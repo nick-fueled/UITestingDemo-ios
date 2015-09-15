@@ -76,7 +76,6 @@ class UITestingDemoUITests: XCTestCase {
         //let labelByAccessibilityIdentifier = app.staticTexts["accessibilityIdentifier"]
         //let labelByAccessibilityLabel = app.staticTexts["accessibilityLabel"]
         
-        //print("-->")
         //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
         //XCTAssertTrue(labelByAccessibilityLabel.exists)
         
@@ -84,7 +83,6 @@ class UITestingDemoUITests: XCTestCase {
         mainButton.tap()
         
         XCTAssertEqual(labelByTextQuery.exists,false)
-        //print("-->")
         //print(labelByTextQuery.value)
         //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
         //XCTAssertTrue(labelByAccessibilityLabel.exists)
