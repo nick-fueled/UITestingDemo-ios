@@ -22,5 +22,6 @@ class QueryTestViewController: UIViewController {
 
     @IBAction func mainButtonTapped(sender: AnyObject) {
         firstLabel.text = "Tapped"
+        secondLabel.alpha = 0.1
     }
 }
