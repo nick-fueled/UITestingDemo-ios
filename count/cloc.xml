@@ -1,0 +1,20 @@
+<?xml version="1.0"?><results>
+<header>
+  <cloc_url>http://cloc.sourceforge.net</cloc_url>
+  <cloc_version>1.64</cloc_version>
+  <elapsed_seconds>0.0632269382476807</elapsed_seconds>
+  <n_files>5</n_files>
+  <n_lines>280</n_lines>
+  <files_per_second>79.0802170494696</files_per_second>
+  <lines_per_second>4428.4921547703</lines_per_second>
+  <report_file>build/cloc.xml</report_file>
+</header>
+<files>
+  <file name="UITestingDemo/Assets.xcassets/AppIcon.appiconset/Contents.json" blank="0" comment="0" code="68"  language="JSON" />
+  <file name="UITestingDemo/ViewControllers/MasterViewController.swift" blank="21" comment="14" code="61"  language="Swift" />
+  <file name="UITestingDemo/ViewControllers/DetailViewController.swift" blank="11" comment="11" code="23"  language="Swift" />
+  <file name="UITestingDemo/AppDelegate.swift" blank="13" comment="14" code="18"  language="Swift" />
+  <file name="UITestingDemo/ViewControllers/QueryTestViewController.swift" blank="7" comment="8" code="11"  language="Swift" />
+  <total blank="52" comment="47" code="181" />
+</files>
+</results>
