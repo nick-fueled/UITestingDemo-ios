@@ -390,6 +390,6 @@ class QueryTestViewController: UIViewController {
         secondLabel.alpha = 0.1
         secondLabel.alpha = 0.1
         secondLabel.alpha = 0.1
-        secondLabel.alpha = 0.1
+        secondLabel.alpha = 0.1 
     }
 }
