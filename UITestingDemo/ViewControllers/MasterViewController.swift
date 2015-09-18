@@ -86,7 +86,7 @@ class MasterViewController: UITableViewController {
 
     //force a static analysis issue
     private func thisIsNeverRun() {
-        var a = 10
+        var a = 20
     }
     
     private func emptyBody() {

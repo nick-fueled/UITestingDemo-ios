@@ -37,6 +37,10 @@ class UITestingDemoTests: XCTestCase {
         XCTAssert(controller.tableView(tableview!, numberOfRowsInSection: 1) == objectCount)
     }
     
+    func testDummy() {
+        XCTAssertTrue(true)
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
