@@ -1,3 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuite errors="0" failures="0" hostname="Nicks-MacBook-Air.local" name="UITestingDemoUITests" tests="1" time="17.124" timestamp="2015-09-18 11:09:07 -0500"><testcase classname='UITestingDemoUITests' name='testQueryScene' time='17.122' />
+<testsuite errors="0" failures="0" hostname="Nicks-MacBook-Air.local" name="UITestingDemoUITests" tests="2" time="14.79" timestamp="2015-09-18 17:54:25 -0500">
+<testcase classname='UITestingDemoUITests' name='testQueryScene' time='11.187' />
+<testcase classname='UITestingDemoUITests' name='testUIDummy' time='3.601' />
 </testsuite>

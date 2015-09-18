@@ -92,4 +92,12 @@ class UITestingDemoUITests: XCTestCase {
         
     }
     
+    func testUIDummy() {
+        
+        let labelByTextQuery = app.staticTexts["Label"]
+        XCTAssertTrue(labelByTextQuery.exists)
+
+        
+    }
+    
 }
