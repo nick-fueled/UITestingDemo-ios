@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<testsuite errors="0" failures="0" hostname="Nicks-MacBook-Air.local" name="UITestingDemoTests" tests="4" time="0.291" timestamp="2015-09-18 17:54:04 -0500"><testcase classname='UITestingDemoTests' name='testDummy' time='0.004' />
-<testcase classname='UITestingDemoTests' name='testExample' time='0.0' />
-<testcase classname='UITestingDemoTests' name='testNumberOfSections' time='0.019' />
-<testcase classname='UITestingDemoTests' name='testPerformanceExample' time='0.266' />
-</testsuite>
