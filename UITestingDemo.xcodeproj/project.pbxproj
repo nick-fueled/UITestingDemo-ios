@@ -206,6 +206,7 @@
 				TargetAttributes = {
 					011BE1891BA861200057BD6A = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 2GVJ6JS822;
 					};
 					011BE19F1BA861200057BD6A = {
 						CreatedOnToolsVersion = 7.0;
@@ -420,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NM.UITestingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "56127440-dd7c-4551-a0ef-45bc509aa163";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
@@ -429,11 +431,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fueled Digital Media, LLC";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fueled Digital Media, LLC";
 				INFOPLIST_FILE = UITestingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NM.UITestingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "56127440-dd7c-4551-a0ef-45bc509aa163";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
