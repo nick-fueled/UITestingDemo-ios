@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        if NSProcessInfo.processInfo().environment["animations"] == "0" {
+            UIView.setAnimationsEnabled(false)
+        }
 
         return true
     }

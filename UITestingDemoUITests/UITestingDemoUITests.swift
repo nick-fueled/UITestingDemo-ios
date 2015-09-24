@@ -12,17 +12,19 @@ class UITestingDemoUITests: XCTestCase {
     
     let app = XCUIApplication()
     
+    private var launched = false
+
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        launchIfNecessary()
+    }
+    private func launchIfNecessary() {
+        if !launched {
+            launched = true
+            app.launchEnvironment = ["animations": "1"]
+            app.launch()
+        }
     }
     
     override func tearDown() {
@@ -30,7 +32,14 @@ class UITestingDemoUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testRunIntro() {
+    
+    func testFlow() {
+        testScreenIntro()
+        testScreenTable()
+    }
+    
+    
+    func testScreenIntro() {
         
         let userTextField = app.textFields["User Name"]
         userTextField.tap()
@@ -40,11 +49,13 @@ class UITestingDemoUITests: XCTestCase {
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("password")
         
+        //EXAMPLE: app.buttons.element.tap() - fail
         app.buttons["Launch App"].tap()
+        
         
     }
     
-    func testExample() {
+    func testScreenTable() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
@@ -57,9 +68,16 @@ class UITestingDemoUITests: XCTestCase {
         
         let tablesQuery = app.tables
         let table = tablesQuery.element
-        let cell = table.cells.elementBoundByIndex(2)
+        
+        //Changed: let cell = table.cells.elementBoundByIndex(2)
+        let cell = app.cells.elementBoundByIndex(2)
+        
+        //let cell = app.cells.containingType(.StaticText, identifier: "Baboon").element
+        
         XCTAssertTrue(cell.exists)
-        let cellButton = cell.buttons.elementBoundByIndex(0)
+        
+        // Changed: let cellButton = cell.buttons.elementBoundByIndex(0)
+        let cellButton = cell.buttons.element
         cellButton.tap()
         tablesQuery.buttons["Delete"].tap()
         let count = table.cells.count
@@ -71,24 +89,20 @@ class UITestingDemoUITests: XCTestCase {
         
         let labelByTextQuery = app.staticTexts["Label"]
         XCTAssertTrue(labelByTextQuery.exists)
-        print(labelByTextQuery.value)
-        
-        //let labelByAccessibilityIdentifier = app.staticTexts["accessibilityIdentifier"]
-        //let labelByAccessibilityLabel = app.staticTexts["accessibilityLabel"]
-        
-        //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
-        //XCTAssertTrue(labelByAccessibilityLabel.exists)
         
         let mainButton = app.buttons["Button"]
         mainButton.tap()
         
         XCTAssertEqual(labelByTextQuery.exists,false)
-        //print(labelByTextQuery.value)
-        //XCTAssertTrue(labelByAccessibilityIdentifier.exists)
-        //XCTAssertTrue(labelByAccessibilityLabel.exists)
         
         let newLabelText = app.staticTexts["Tapped"]
         XCTAssertTrue(newLabelText.exists)
+        
+        let dataLabel = app.staticTexts["Data Loaded"]
+        let exists = NSPredicate(format: "exists == true")
+        
+        expectationForPredicate(exists, evaluatedWithObject: dataLabel, handler: nil)
+        waitForExpectationsWithTimeout(60, handler: nil) //big margin of error
         
     }
     
