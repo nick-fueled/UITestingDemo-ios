@@ -68,24 +68,25 @@ class UITestingDemoUITests: XCTestCase {
         
         let userTextField = app.textFields["User Name"]
         userTextField.tap()
-        app.textFields["User Name"].typeText("Hello")
+        app.textFields["User Name"].typeText("Monkey1")
         
         let passwordSecureTextField = XCUIApplication().secureTextFields["Password"]
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("password")
         
-        //EXAMPLE: app.buttons.element.tap() - fail
         app.buttons["Launch App"].tap()
         
         
     }
     
     func testScreenTable() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let masterNavigationBar = app.navigationBars["Master"]
+        // Alternative: let masterNavigationBar = app.navigationBars.element
+        
         let addButton = masterNavigationBar.buttons["Add"]
+        // Alternative: let addButton = app.buttons["Add"]
+        
         addButton.tap()
         addButton.tap()
         addButton.tap()

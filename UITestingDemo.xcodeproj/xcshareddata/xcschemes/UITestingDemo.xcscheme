@@ -56,10 +56,10 @@
                   Identifier = "UITestingDemoUITests/testFlow()">
                </Test>
                <Test
-                  Identifier = "UITestingDemoUITests/testQueryScene()">
+                  Identifier = "UITestingDemoUITests/testRunIntro()">
                </Test>
                <Test
-                  Identifier = "UITestingDemoUITests/testRunIntro()">
+                  Identifier = "UITestingDemoUITests/testScreenIntro()">
                </Test>
                <Test
                   Identifier = "UITestingDemoUITests/testScreenTable()">
