@@ -32,6 +32,31 @@ class UITestingDemoUITests: XCTestCase {
         super.tearDown()
     }
     
+    func testQueryScene() {
+        
+        let label = app.descendantsMatchingType(.StaticText)["Label"]
+        XCTAssertTrue(label.exists)
+        
+//      
+//        let labelByTextQuery = app.staticTexts["Label"]
+//        XCTAssertTrue(labelByTextQuery.exists)
+//        
+//        let mainButton = app.buttons["Button"]
+//        mainButton.tap()
+//        
+//        XCTAssertEqual(labelByTextQuery.exists,false)
+//        
+//        let newLabelText = app.staticTexts["Tapped"]
+//        XCTAssertTrue(newLabelText.exists)
+//        
+//        let dataLabel = app.staticTexts["Data Loaded"]
+//        
+//        let exists = NSPredicate(format: "exists == true")
+//        expectationForPredicate(exists, evaluatedWithObject: dataLabel, handler: nil)
+//        waitForExpectationsWithTimeout(60, handler: nil) //big margin of error
+        
+    }
+    
     
     func testFlow() {
         testScreenIntro()
@@ -85,26 +110,7 @@ class UITestingDemoUITests: XCTestCase {
         
     }
     
-    func testQueryScene() {
-        
-        let labelByTextQuery = app.staticTexts["Label"]
-        XCTAssertTrue(labelByTextQuery.exists)
-        
-        let mainButton = app.buttons["Button"]
-        mainButton.tap()
-        
-        XCTAssertEqual(labelByTextQuery.exists,false)
-        
-        let newLabelText = app.staticTexts["Tapped"]
-        XCTAssertTrue(newLabelText.exists)
-        
-        let dataLabel = app.staticTexts["Data Loaded"]
-        let exists = NSPredicate(format: "exists == true")
-        
-        expectationForPredicate(exists, evaluatedWithObject: dataLabel, handler: nil)
-        waitForExpectationsWithTimeout(60, handler: nil) //big margin of error
-        
-    }
+
     
     func testUIDummy() {
         

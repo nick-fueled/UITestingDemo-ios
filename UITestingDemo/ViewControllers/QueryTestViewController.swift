@@ -32,7 +32,7 @@ class QueryTestViewController: UIViewController {
     
     private func fetchData() {
         activityIndicatorView.hidden = false;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue()) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 6 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue()) {
             self.showData();
         }
     }
