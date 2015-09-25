@@ -30,7 +30,7 @@
       codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "011BE19F1BA861200057BD6A"
@@ -51,9 +51,6 @@
             <SkippedTests>
                <Test
                   Identifier = "UITestingDemoUITests/testExample()">
-               </Test>
-               <Test
-                  Identifier = "UITestingDemoUITests/testFlow()">
                </Test>
                <Test
                   Identifier = "UITestingDemoUITests/testQueryScene()">
