@@ -34,26 +34,21 @@ class UITestingDemoUITests: XCTestCase {
     
     func testQueryScene() {
         
-        let label = app.descendantsMatchingType(.StaticText)["Label"]
-        XCTAssertTrue(label.exists)
+        let labelByTextQuery = app.staticTexts["Label"]
+        XCTAssertTrue(labelByTextQuery.exists)
         
-//      
-//        let labelByTextQuery = app.staticTexts["Label"]
-//        XCTAssertTrue(labelByTextQuery.exists)
-//        
-//        let mainButton = app.buttons["Button"]
-//        mainButton.tap()
-//        
-//        XCTAssertEqual(labelByTextQuery.exists,false)
-//        
-//        let newLabelText = app.staticTexts["Tapped"]
-//        XCTAssertTrue(newLabelText.exists)
-//        
-//        let dataLabel = app.staticTexts["Data Loaded"]
-//        
-//        let exists = NSPredicate(format: "exists == true")
-//        expectationForPredicate(exists, evaluatedWithObject: dataLabel, handler: nil)
-//        waitForExpectationsWithTimeout(60, handler: nil) //big margin of error
+        let mainButton = app.buttons["Button"]
+        mainButton.tap()
+        
+        XCTAssertEqual(labelByTextQuery.exists,false)
+
+        let newLabelText = app.staticTexts["Tapped"]
+        XCTAssertTrue(newLabelText.exists)
+        
+        let dataLabel = app.staticTexts["Data Loaded"]
+        let exists = NSPredicate(format: "exists == true")
+        expectationForPredicate(exists, evaluatedWithObject: dataLabel, handler: nil)
+        waitForExpectationsWithTimeout(60, handler: nil) //big margin of error
         
     }
     
@@ -120,5 +115,32 @@ class UITestingDemoUITests: XCTestCase {
 
         
     }
+    
+//    func testForMeetup() {
+//        
+//        let userNameTextField = app.textFields["User Name"]
+//        userNameTextField.tap()
+//        userNameTextField.typeText("hello")
+//        
+//        let passwordSecureTextField = app.secureTextFields["Password"]
+//        passwordSecureTextField.tap()
+//        passwordSecureTextField.typeText("password")
+//        
+//        app.buttons["Launch App"].tap()
+//        
+//        let addButton = app.buttons["Add"]
+//        addButton.tap()
+//        addButton.tap()
+//        addButton.tap()
+//        app.buttons["Edit"].tap()
+//        
+//        let tablesQuery = app.tables
+//        let cell = tablesQuery.cells.containingType(.StaticText, identifier: "Tamarin").element
+//        cell.buttons.elementBoundByIndex(0).tap()
+//        cell.buttons["Delete"].tap()
+//        
+//        
+//        
+//    }
     
 }
