@@ -26,6 +26,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        startTimer()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +36,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        objects.insert(monkeys[objects.count], atIndex: 0)
+        objects.insert(monkeys[1], atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
@@ -67,9 +69,9 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Index is always 1, so use total rows
-        let rowTotal = tableView.numberOfRowsInSection(indexPath.section) - 1
-        cell.textLabel!.text = monkeys[rowTotal]
-        cell.detailTextLabel!.text = genii[rowTotal]
+        //let rowTotal = tableView.numberOfRowsInSection(indexPath.section) - 1
+        cell.textLabel!.text = NSDate().description
+        cell.detailTextLabel!.text = String(self.objects.count)
         return cell
     }
 
@@ -93,6 +95,14 @@ class MasterViewController: UITableViewController {
     }
     
     private func emptyBody() {
+    }
+    
+    func startTimer() {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "timedAdd", userInfo: nil, repeats: true)
+    }
+    
+    @objc func timedAdd() {
+        insertNewObject(self)
     }
 
 }
